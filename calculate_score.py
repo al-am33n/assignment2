@@ -4,6 +4,9 @@ import subprocess
 # Run the tests and get the results
 result = subprocess.run(['python', '-m', 'unittest', 'discover', '-s', 'tests'], capture_output=True, text=True)
 
+# Print the output for debugging
+print(result.stdout)
+
 # Parse the result to calculate the score
 output = result.stdout.splitlines()
 total_tests = 0
